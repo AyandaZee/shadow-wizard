@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -68,5 +69,33 @@ public class GameManager : MonoBehaviour
     }
 
 
+    public void StartGame()
+    {
+        SceneManager.LoadScene("SampleScene");
+    }
+    public void QuitGame()
+    {
+        Application.Quit();
+        Debug.Log("Game is exiting..."); // This lets us see it working in the editor
+    }
+    public void GoToMainMenu()
+    {
+        Time.timeScale = 1f; // Make sure the game is unpaused when we leave!
+        SceneManager.LoadScene("Main Menu");
+    }
+
+    public void TogglePause()
+    {
+        if (Time.timeScale == 1)
+        {
+            Time.timeScale = 0f; // Freeze the game
+            Debug.Log("Game Paused");
+        }
+        else
+        {
+            Time.timeScale = 1f; // Unfreeze the game
+            Debug.Log("Game Resumed");
+        }
+    }
 
 }
