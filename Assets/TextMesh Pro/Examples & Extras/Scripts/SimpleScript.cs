@@ -15,7 +15,7 @@ namespace TMPro.Examples
         private float m_frame;
 
 
-        void Start()
+        void Start() 
         {
             // Add new TextMesh Pro Component
             m_textMeshPro = gameObject.AddComponent<TextMeshPro>();
